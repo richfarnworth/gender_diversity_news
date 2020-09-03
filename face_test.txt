@@ -1,0 +1,8 @@
+POST https://australiaeast.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=true&recognitionModel=recognition_01&returnRecognitionModel=false&detectionModel=detection_01 HTTP/1.1
+Host: australiaeast.api.cognitive.microsoft.com
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: 1505a67739b04bf1856b9740445de25d
+
+{
+    "url": "https://static01.nyt.com/images/2019/10/02/video/02-still-for-america-room-loop/02-still-for-america-room-loop-superJumbo.jpg?quality=90&auto=webp"
+}
