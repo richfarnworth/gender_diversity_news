@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 
 class image_scraper:
     def __init__(self,page_url,driver):
@@ -13,5 +15,13 @@ class image_scraper:
             if src != '' and src[:4] != 'data':
                 img_list += [src]
             else:
-                img_list += [i.get_attribute('data-src').replace('{width}','820')]
+                src = i.get_attribute('data-src').replace('{width}','820')
+                if src[:4].lower() != 'http':
+                    print(self.page_url)
+                    print(src)
+                    parsed_uri = urlparse(self.page_url)
+                    result = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)[:-1]
+                    src = (result + src)
+                    print(src)
+                img_list += [src]
         return img_list
